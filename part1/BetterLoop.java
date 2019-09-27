@@ -7,7 +7,7 @@ class BetterLoop
       */
       for (int val : values)
       {
-         if ( val == v)
+         if (val == v)
          {
             return true;
          }

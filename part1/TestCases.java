@@ -31,7 +31,8 @@ public class TestCases
    @Test
    public void testSimpleIf3()
    {
-      fail("Missing SimpleIf3");
+      assertEquals(0.0, SimpleIf.max(-100, 0), DELTA);
+      //fail("Missing SimpleIf3");
       /* TO DO: Write one more valid test case. */
    }
 
@@ -50,7 +51,8 @@ public class TestCases
    @Test
    public void testSimpleLoop3()
    {
-      fail("Missing SimpleLoop3");
+      assertEquals(621, SimpleLoop.sum(-100, 106));
+      //fail("Missing SimpleLoop3");
       /* TO DO: Write one more valid test case to make sure that
          this function is not just returning 7. */
    }
@@ -76,7 +78,9 @@ public class TestCases
    @Test
    public void testSimpleArray3()
    {
-      fail("Missing SimpleArray3");
+      assertArrayEquals(new int[] {1, 100, 4},
+      SimpleArray.squareAll(new int[] {-1, 10, -2}));
+      //fail("Missing SimpleArray3");
       /* TO DO: Add a new test case. */
    }
 
@@ -94,7 +98,14 @@ public class TestCases
    @Test
    public void testSimpleList2()
    {
-      fail("Missing SimpleList2");
+      List<Integer> input =
+         new LinkedList<Integer>(Arrays.asList(new Integer[] {-12, 0, 20}));
+      List<Integer> expected =
+         new ArrayList<Integer>(Arrays.asList(new Integer[] {144, 0, 400}));
+      
+      assertEquals(expected, SimpleList.squareAll(input));
+
+      //fail("Missing SimpleList2");
       /* TO DO: Add a new test case. */
    }
 
@@ -113,7 +124,8 @@ public class TestCases
    @Test
    public void testBetterLoop3()
    {
-      fail("Missing BetterLoop3");
+      assertTrue(BetterLoop.contains(new int[] {-1, 0, 0, 10}, 10));
+      //fail("Missing BetterLoop3");
       /* TO DO: Write a valid test case where the expected result is false. */
    }
 
@@ -157,6 +169,48 @@ public class TestCases
    @Test
    public void testExampleMap2()
    {
+      List<String> expected = Arrays.asList("Nicholas", "Was", "Here");
+      Map<String, List<Course>> courseListsByStudent = new HashMap<>();
+
+      courseListsByStudent.put("Nicholas",
+         Arrays.asList(
+            new Course("CPE 123", 4),
+            new Course("CPE 101", 4),
+            new Course("CPE 202", 4),
+            new Course("CPE 203", 4),
+            new Course("CPE 225", 4)));
+      courseListsByStudent.put("Nolasco",
+         Arrays.asList(
+            new Course("CPE 101", 4)));
+      courseListsByStudent.put("Was",
+         Arrays.asList(
+            new Course("CPE 123", 4),
+            new Course("CPE 203", 4),
+            new Course("CPE 471", 4),
+            new Course("CPE 473", 4),
+            new Course("CPE 476", 4),
+            new Course("CPE 572", 4)));
+
+      courseListsByStudent.put("Actually",
+         Arrays.asList(
+            new Course("CPE 123", 4),
+            new Course("CPE 473", 4),
+            new Course("CPE 476", 4),
+            new Course("CPE 572", 3)));
+
+      courseListsByStudent.put("Here",
+         Arrays.asList(
+            new Course("CPE 123", 4),
+            new Course("CPE 203", 4),
+            new Course("CPE 471", 4),
+            new Course("CPE 473", 4),
+            new Course("CPE 476", 4),
+            new Course("CPE 572", 4)));
+
+      assertEquals(new HashSet<>(expected),
+         new HashSet<>(ExampleMap.highEnrollmentStudents(
+            courseListsByStudent, 16)));
+
       fail("Missing ExampleMap2");
       /* TO DO: Write another valid test case. */
    }

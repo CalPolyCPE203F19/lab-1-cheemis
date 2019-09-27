@@ -9,6 +9,6 @@ class SimpleIf
       {
          return y;
       }
-      return x; // clearly not correct -- but testable
+      return x;
    }
 }

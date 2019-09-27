@@ -21,9 +21,102 @@ public class TestCases
     * This test is just to get you started.
     */
    @Test
-   public void testGetX()
+   public void testGetX1()
    {
       assertEquals(1.0, new Point(1.0, 2.0).getX(), DELTA);
+   }
+
+   @Test
+   public void testGetX2()
+   {
+      assertEquals(5.0, new Point(5.0, 5.0).getX(), DELTA);
+   }
+
+   @Test
+   public void testGetX3()
+   {
+      assertEquals(-3.0, new Point(-3.0, 3.0).getX(), DELTA);
+   }
+
+   @Test
+   public void testGetY1()
+   {
+      assertEquals(2.0, new Point(1.0, 2.0).getY(), DELTA);
+   }
+
+   @Test
+   public void testGetY2()
+   {
+      assertEquals(5.0, new Point(5.0, 5.0).getY(), DELTA);
+   }
+
+   @Test
+   public void testGetY3()
+   {
+      assertEquals(-3.0, new Point(3.0, -3.0).getY(), DELTA);
+   }
+
+   @Test
+   public void testGetRadius1()
+   {
+      assertEquals(5.0, new Point(3.0, 4.0).getRadius(), DELTA);
+   }
+
+   @Test
+   public void testGetRadius2()
+   {
+      assertEquals(Math.sqrt(2), new Point(1, 1).getRadius(), DELTA);
+   }
+
+   @Test
+   public void testGetRadius3()
+   {
+      assertEquals(5.65685424949, new Point(-4.0, -4.0).getRadius(), DELTA);
+   }
+
+   @Test
+   public void testGetAngle1()
+   {
+      assertEquals(Math.PI/2, new Point(0.0, 1.0).getAngle(), DELTA);
+   }
+
+   @Test
+   public void testGetAngle2()
+   {
+      assertEquals(0.0, new Point(1.0, 0.0).getAngle(), DELTA);
+   }
+
+   @Test
+   public void testGetAngle3()
+   {
+      assertEquals(3.92699, new Point(-4.0, -4.0).getAngle(), DELTA);
+   }
+
+   @Test
+   public void testGetAngle4()
+   {
+      assertEquals(5.49779, new Point(4.0, -4.0).getAngle(), DELTA);
+   }
+
+   @Test
+   public void rotate901()
+   {
+      assertEquals(new Point(0.0, 1.0), new Point(1.0, 0.0).rotate90());
+   }
+
+   @Test
+   public void rotate902()
+   {
+      Point point = new Point(2.0, 2.0);
+      assertEquals(new Point(-2.0, 2.0), 
+      point.rotate90());
+   }
+
+   @Test
+   public void rotate903()
+   {
+      assertEquals(new Point(-4.0, 3.0), 
+      new Point(3.0, 4.0).rotate90());
    }
 
    /*

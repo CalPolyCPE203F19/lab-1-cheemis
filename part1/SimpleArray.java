@@ -16,12 +16,12 @@ class SimpleArray
          input array and to place the result into the output array.
       */
       int i = 0;
-      for (double val : values)
+      for (int val : values)
       {
-         newValues[i] = Math.squrt(val);
+         newValues[i] = (val * val);
          i ++;
       }
-
+      System.out.println(newValues);
       return newValues;
    }
 }
