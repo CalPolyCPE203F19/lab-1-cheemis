@@ -128,6 +128,16 @@ public class TestCases
       assertEquals(test1.getY(), test2.getY(), DELTA);
    }
 
+   @Test
+   public void rotate904()
+   {
+      Point test1 = new Point(-0.70710678118, -0.70710678118);
+      Point test2 = new Point(-0.70710678118, 0.70710678118).rotate90();
+
+      assertEquals(test1.getX(), test2.getX(), DELTA);
+      assertEquals(test1.getY(), test2.getY(), DELTA);
+   }
+
    /*
     * The tests below here are to verify the basic requirements regarding
     * the "design" of your class.  These are to remain unchanged.
