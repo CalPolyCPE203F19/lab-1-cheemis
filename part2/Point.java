@@ -28,12 +28,7 @@ class Point
     {
         if (getY() < 0)
         {
-            if (getX() > 0)
-            {
-                return Math.acos(getX() / getRadius())
-                    + ((2/3) * Math.PI);
-            }
-            return Math.PI + Math.acos(-(getX() / getRadius()));
+            return -Math.acos(getX() / getRadius());
         }
         return Math.acos(getX() / getRadius());
     }
